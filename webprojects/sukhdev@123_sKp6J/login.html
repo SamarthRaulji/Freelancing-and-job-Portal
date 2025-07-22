@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Login</title>
+      <link rel="stylesheet" href="login.css">
+      <script src="./login.js"></script>
+      <script src="https://kit.fontawesome.com/b4ac70a84a.js" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+   </head>
+
+   <body>
+      <div class="container">
+         <div class="title-text">
+            <div class="title login">
+                Login
+            </div>
+         </div>
+            <div class="form-inner">
+               <form class="login">
+                  <div class="field">
+                     <input type="email" id="userEmail" placeholder="Email Address" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" id="userPw" placeholder="Password" required>
+                  </div>
+                  <br>
+                    <div>
+                     <button type="button" onclick="check()" id="login_btn" style="vertical-align:middle"><span>Login</span></button>
+                    </div>
+
+                  <div class="signup-link">
+                     Not a member? <a href="signup.html">Signup now</a>
+                  </div>
+               </form>  
+            </div>
+         </div>
+      </div>
+   </body>
+   
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            min-height: 100vh;
+        }
+
+        .nav {
+            background-color: navy;
+            color: white;
+            padding: 10px 20px;
+            position: fixed;
+            width: 98%;
+            top: 0;
+            z-index: 1000;
+            margin-left: 10px;
+            border-radius: 50px;
+            border: 6px solid black;
+        }
+
+        .nav h1 {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav img {
+            vertical-align: middle;
+        }
+
+        .nav span {
+            cursor: pointer;
+            transition: color 0.3s;
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .nav span:hover {
+            color: #ddd;
+        }
+
+        .log-span {
+            background-color: white;
+            color: navy;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-left: auto;
+        }
+
+        .log-span:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.05);
+        }
+
+        .div-1 {
+            margin-top: 100px;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 100px);
+        }
+
+        .content {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 40px;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .content h1 {
+            color: navy;
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .content h1 img {
+            display: block;
+            margin: 20px auto;
+        }
+
+        .content h2 {
+            color: #333;
+            line-height: 1.6;
+            padding: 20px 0;
+        }
+
+        .yellow-text {
+            color: #333;
+            margin-left: 25px;
+            margin-top: 15px;
+            list-style-position: outside;
+        }
+
+        .yellow-text li {
+            margin-bottom: 15px;
+            line-height: 1.4;
+            padding-left: 10px;
+        }
+
+        u {
+            color: navy;
+            cursor: pointer;
+            text-decoration: none;
+            border-bottom: 2px solid navy;
+            display: inline-block;
+            margin-top: 20px;
+            padding-bottom: 2px;
+        }
+
+        u:hover {
+            color: #000066;
+        }
+
+        .emptydiv {
+            height: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav h1 {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .content {
+                width: 95%;
+                padding: 20px;
+            }
+            
+            .nav span {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav" id="nav">
+        <h1>
+            &nbsp;&nbsp;<img src="logo1.png" width="7%"> &nbsp;&nbsp;&nbsp;&nbsp;
+            <span onclick="alert('Click on the login Button')">Home</span> &nbsp;&nbsp;&nbsp;&nbsp;
+            <span onclick="alert('Click on the login Button')">Explore</span> &nbsp;&nbsp;&nbsp;&nbsp;
+            <span onclick="alert('Click on the login Button')">My cloud</span> &nbsp;&nbsp;&nbsp;&nbsp;
+            <span onclick="alert('Click on the login Button')">Profile</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button onclick="window.location.href='data.php'" class="log-span">Login</button>
+        </h1>
+    </div>
+
+    <div class="div-1" id="div-1">
+        <div class="emptydiv"></div>
+        <div class="content" align="center">
+            <h1>Hello and Welcome to <img src="logo1.png" width="10%">
+                <br>A community of Developers and Programers.
+            </h1>
+            <h2>
+                Register or Login to Prog HUB here........
+                <ul type="round" class="yellow-text">
+                    <li> You can Explore for Jobs and other projects.
+                    <li> You can Upload your Projects, CV, Documentation on My Cloud.
+                    <li>You can upldate and Customize your Profile.
+                    <li>Free Job searchs with our intelligent and verified Companies and It Profiles.
+                </ul>
+                <u onclick="window.location.href='data.php';">Find your Fit, your Space Register or Login now.</u>
+            </h2>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play With Computer</title>
+    <style>
+        #result {
+            display: none;
+            text-align: center;
+            margin-top: 20px; 
+        }
+
+        #result th {
+            border: 2px black solid;
+            padding: 10px;
+            font-size: 1rem;
+            color: #333;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #8fd3f4, #84fab0);
+    background-size: 400% 400%;
+    animation: gradientBackground 10s ease infinite;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+th {
+    padding: 20px;
+    font-size: 1rem;
+    color: #333;
+}
+
+img {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"] {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #3c3838;
+}
+
+input[type="button"] {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(135deg, #9b5de5, #f15bb5);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+input[type="button"]:hover {
+    background: linear-gradient(135deg, #f15bb5, #9b5de5);
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+#result {
+    display: none;
+    text-align: center;
+    margin-top: 20px; 
+}
+
+#result th {
+    border: 2px black solid;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+button{
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(135deg, #9b5de5, #f15bb5);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+button:hover {
+    transition: background 0.3s ease;
+    background: linear-gradient(135deg, #f15bb5, #9b5de5);
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+    </style>
+    <script>
+        function result()
+        {
+            var comp = Math.floor(Math.random() * 3) + 1;
+            var user_temp = document.frm.user.value;
+            var user = user_temp.toLowerCase();
+            var resultDiv = document.getElementById('result');
+            var comp_print;
+            var user_print;
+            if(comp == 1)
+                comp = "a";
+            else if(comp == 2)
+                comp = "b";
+            else
+                comp = "c";
+            if(user == 'a' || user == 'b' || user == 'c')
+            {
+                if(comp == 'a')
+                        comp_print = "Stone";
+                    else if(comp == 'b')
+                        comp_print = "Paper";
+                    else
+                        comp_print = "Sizer";
+                    
+                        if(user == 'a')
+                        user_print = "Stone";
+                    else if(user == 'b')
+                        user_print = "Paper";
+                    else
+                        user_print = "Sizer";
+                if(comp == user)
+                {
+                    resultDiv.style.display = (resultDiv.style.display === "none") ? "block" : "none";
+                    document.frm.comp_turn.value = comp_print;
+                    document.frm.user_turn.value = user_print;
+                    document.frm.wining.value = "It's Tie!";
+                }
+                else if((comp == 'a' && user == 'c') || (comp == 'b' && user == 'a') || (comp == 'c' && user == 'b'))
+                {
+                    resultDiv.style.display = (resultDiv.style.display === "none") ? "block" : "none";
+                    document.frm.comp_turn.value = comp_print;
+                    document.frm.user_turn.value = user_print;
+                    document.frm.wining.value = "Computer Win!";
+                }
+                else
+                {
+                    resultDiv.style.display = (resultDiv.style.display === "none") ? "block" : "none";
+                    document.frm.comp_turn.value = comp_print;
+                    document.frm.user_turn.value = user_print;
+                    document.frm.wining.value = "You Win!";
+                }
+            }
+            else 
+            {
+                alert("Select, Atleast One !");
+            }
+            
+        }
+        
+    </script>
+  
+</head>
+<body>
+    <form name="frm">
+        <table>
+            <tr>
+                <th><img src="comp.png" height="200px" width="200px"></th>
+                <th><img src="friend.png" height="200px" width="200px"></th>
+            </tr>
+            <tr>
+                <th>I Took My Turn!<br></th>
+                <th>
+                    Take Your Turn! <br>
+                    <input type="radio" name="user" value="a" id="s1"><label for="s1">Stone</label>
+                    <input type="radio" name="user" value="b" id="s2"><label for="s2">Paper</label>
+                    <input type="radio" name="user" value="c" id="s3"><label for="s3">Sizer</label>
+                    <br>
+                    
+                </th>
+                <tr>
+                    <th><button><a href="index.html">Go Back</a></button></th>
+                    <th><input type="button" value="Check Result" onclick="result()">  </th>
+                </tr>
+            </tr>
+        </table>
+
+        <div id="result" style="display: none;">
+            <table align="center">
+                <tr>
+                    <th><h2>Result</h2></th>
+                </tr>
+                <tr>
+                    <th colspan="2">Computer Turn is : <input readonly type="text" name="comp_turn" size="10"></th>
+                </tr>
+                <tr>
+                    <th colspan="2">Your Turn is : <input readonly type="text" name="user_turn" size="10"></th>
+                </tr>
+                <tr>
+                    <th colspan="2">Result is : <input readonly type="text" name="wining" size="10"></th>
+                </tr>
+                <tr>
+                    <th><button><a href="comp.html">Retry</a></button></th>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

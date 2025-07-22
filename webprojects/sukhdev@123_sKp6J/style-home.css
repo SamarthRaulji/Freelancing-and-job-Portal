@@ -1,0 +1,60 @@
+.bg-custom{
+    background-color: black;
+}
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-link{
+    color: white !important;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.btn-custom{
+    background-color: rgb(246, 44, 44) !important;
+    font-weight: 800 !important;
+    color:black !important;   
+}
+
+.btn-collection{ 
+    max-width: 241px;
+    margin:  2em auto;
+}
+
+.img-card:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.06);
+    cursor: pointer;
+}
+
+.btn-ticket{  
+    max-width: 110px;
+    margin:  2em auto;
+}
+a:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.2);
+    color: white;
+}
+.arrow{
+    color: white;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-top: 30px;
+    margin-left: 55%;
+    animation: animate1 1s infinite;
+}
+@keyframes animate1 {
+    0%{
+        transform: translateX(-20px);
+        }
+    50%{
+        transform: translateX(30px);
+        }
+    100%{
+        transform: translateX(-20px);
+        }
+}
+

@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <!--admin page.."admin.html" -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+        <script>
+            function changebgcoloratRuntime(color,colorcode){
+              if (colorcode=="") {
+                document.body.style.background= color;
+              }
+               else{
+                document.body.style.background= colorcode;
+               }
+            }      
+        </script>
+
+<style>
+    body{
+        background-color: #000000;
+    }
+    button{
+    background-color: #E50914;
+    color: #ffff;
+    border-radius: 10px;
+    margin-left: 25px;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    transition: 0.5s ease-in-out;
+    }
+    button:hover{
+    background-color: #ffff;
+    color:#E50914;
+    margin:0auto;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    }
+    .admin{
+    color: #E50914;
+    margin: 0auto;
+    padding: 10px;
+    font-size: 40px;
+    text-align: center;
+    font-style: boold;
+    }
+    legend{
+    padding: 20px;
+    font-size: 50px;
+    color: #E50914;
+    }
+    fieldset{
+    color: #E50914;
+    font-display: #E50914;
+    }
+    td{
+        color: #E50914;
+        font-size: 20px;
+    }
+    .t1{
+        margin-left: 10px;
+        margin-bottom: 5px;
+        border-radius: 10px;
+        height: 30px;
+    }
+</style> 
+    </head>
+    <body>
+        <h2 class="admin">Change Your Background’s Color</h2>
+        <fieldset>
+            <legend>Pick A Color</legend>
+        <table>
+            <tr><td>Color Name</td><td><input  class="t1" type="text" id="colorname"/></td></tr>
+            <tr><td>Color code</td><td><input class="t1" type="text" id="colorcode"/></td></tr>
+            <tr><td></td><td> <button id="colorSubmit"
+             onclick="changebgcoloratRuntime(document.getElementById('colorname').value,
+             document.getElementById('colorcode').value)">
+                Submit Color</button><br>
+                <a href="playing.html"><button style="margin-top: 10px; padding-left: 30px; padding-right: 30px;">Go Back</button></a>
+
+            </td
+            ></tr>
+        </table>
+        </fieldset>
+    </body>
+</html>

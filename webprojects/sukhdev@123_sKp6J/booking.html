@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-home.css">
+    <script src="https://kit.fontawesome.com/b4ac70a84a.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+
+    <title>Movie Seat Booking</title> 
+    
+  </head>
+
+<body>
+    <div>
+      <img class="main-logo" style="margin-top: 90px;" src="./image/Netflix.png"/>
+    </div>
+
+     
+    <div class="movie-container">
+      <label style="font-size: 1em;">Select Movie :</label>
+      <select id="movie">
+        <option value="16">Wrath of man ($16)</option>
+        <option value="12">Logan ($12)</option>
+        <option value="9">Avengers Infinity War ($9)</option>
+        <option value="10">Marriage Story ($10)</option>
+        <option value="14">The Witcher: Nightmare of the Wolf ($14)</option>
+        <option value="15">Black Widow ($15)</option>
+        <option value="11">Colores of love ($11)</option>
+        <option value="10">Sardar Ka Grandson ($10)</option>
+      </select>
+      <br>
+      <label style="font-size: 1em; margin-top: 10px;">Select Date &nbsp; : </label>
+      &nbsp;&nbsp; <input style="margin-top: 10px;" type="date" id="date1">
+    </div>
+
+    <ul class="showcase">
+      <li>
+        <div id="seat" class="seat"></div>
+        <small class="status" style="font-size: 1em;">N/A</small>
+      </li>
+      <li>
+        <div id="seat" class="seat selected"></div>
+        <small class="status" style="font-size: 1em;">Selected</small>
+      </li>
+      <li>
+        <div id="seat" class="seat occupied"></div>
+        <small class="status" style="font-size: 1em;">Occupied</small>
+      </li>
+    </ul>
+
+    <div class="container">
+      <div class="screen"></div>
+
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+      </div>
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+      </div>
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat occupied"></div>
+      </div>
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+      </div>
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+      </div>
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat"></div>
+      </div>
+    </div>
+
+    <p class="text" style="font-size: 1em;margin:0px 0px 15px 0px">
+      You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span>
+    </p>
+    <div>
+        <button class="btn2" type="button" onclick="book()" style="vertical-align:middle"><span>Book Ticket</span></button>
+      </div>
+    <div>
+    <a href="./index.html">
+      <button class="btn1" type="button" style="vertical-align:middle"><span>Logout</span></button>
+    </a>
+    </div>
+
+    <div>
+      <a href="./playing.html">
+        <button type="button" style="vertical-align:middle"><span>Back to Movies</span></button>
+      </a>
+      </div>
+      <div id="pdf-preview" style="display: none; border: 1px solid #ccc; padding: 20px; margin-top: 20px;">
+        <h2>Ticket Preview</h2>
+        <iframe id="pdf-frame" style="width: 100%; height: 500px;"></iframe>
+        <button onclick="downloadPDF()">Download PDF</button>
+       <button onclick="cancel()">Cancel Booking</button>
+    </div>
+
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+      
+      <script>
+        // date validation
+      
+            var date2 = new Date().toISOString().slice(0, 10);
+            document.getElementById('date1').setAttribute('min', date2);
+          
+        var count = 0;
+        var seats = document.getElementsByClassName("seat");
+        for (var i = 0; i < seats.length; i++) {
+            var item = seats[i];
+            
+            item.addEventListener("click", (event) => {
+                var price = document.getElementById("movie").value;
+
+                if (!event.target.classList.contains('occupied') && !event.target.classList.contains('selected')) {
+                    count++;
+                    var total = count * price;
+                    event.target.classList.add("selected");
+                    document.getElementById("count").innerText = count;
+                    document.getElementById("total").innerText = total;
+                }
+            });
+        }
+         
+       
+        function book() {
+            if (count == 0) {
+                Swal.fire({
+                    title: 'Seat Not Selected!',
+                    text: 'Please, Select Atleast 1 Seat!',
+                    icon: 'info',
+                    confirmButtonText: 'OK'
+                });
+            } 
+            else {
+
+               Swal.fire({
+                    title: 'Seat Booked',
+                    text: 'Your Seat Successfully Booked',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    generatePDF();
+                });
+              
+            }
+        
+          }
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            var movie = document.getElementById("movie").options[document.getElementById("movie").selectedIndex].text;
+            var count = document.getElementById("count").innerText;
+            var total = document.getElementById("total").innerText;
+            // ticket id generation / 
+            var length = 12; 
+            var digits = '0123456789';
+            var result = '';
+            for (var i = 0; i < length; i++) {
+              var randomIndex = Math.floor(Math.random() * digits.length);
+              result += digits[randomIndex];
+            }
+            var ticket_id = "T_"+result;
+          
+            var dateInput = document.getElementById('date1');
+            var date1 = dateInput.value;
+            doc.setFont("helvetica", "bold");
+            doc.text("------ Movie Ticket Booking ------",70,20);
+            doc.setFont("helvetica", "normal");
+            doc.text("------ Ticket Information ------",70,40);
+            doc.text("Movie Name : " + movie, 70, 50);
+            doc.text("Ticket ID : " + ticket_id, 70, 60);
+            doc.text("Number of Seats : " + count, 70, 70);
+            doc.text("Booking Date : "+date2,70,80);
+            doc.text("Movie Date : "+date1,70,90);
+            doc.text("Movie Timing : Starts At 3:00 PM",70,100);
+            doc.text("------ Payment Information ------",70,120)
+            doc.text("Total Price : $" + total, 70, 130);
+            doc.text("Payment Method : CASH",70,140);
+            doc.text("-------- Thanks For Booking -------",70,160);
+            doc.text("----------- Visit Again -----------",70,170);
+            doc.setFont("helvetica", "bold");
+            doc.text("NOTES :",20,180);
+            doc.setFont("helvetica", "normal");
+            doc.text("Without Ticket No Entry!",20,190);
+            doc.text("Take Entry Before 20 Minutes!",20,200);
+            
+
+            const pdfData = doc.output('blob');
+            const pdfURL = URL.createObjectURL(pdfData);
+
+            // Display PDF preview
+            document.getElementById("pdf-frame").src = pdfURL;
+            document.getElementById("pdf-preview").style.display = 'block';
+        }
+
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            var movie = document.getElementById("movie").options[document.getElementById("movie").selectedIndex].text;
+            var count = document.getElementById("count").innerText;
+            var total = document.getElementById("total").innerText;
+
+            // ticket id generation / 
+            var length = 12; 
+            var digits = '0123456789';
+            var result = '';
+            for (var i = 0; i < length; i++) {
+              var randomIndex = Math.floor(Math.random() * digits.length);
+              result += digits[randomIndex];
+            }
+            var ticket_id = "T_"+result;
+            
+            var dateInput = document.getElementById('date1');
+            var date1 = dateInput.value;
+            
+            doc.setFont("helvetica", "bold");
+            doc.text("------ Movie Ticket Booking ------",70,20);
+            doc.setFont("helvetica", "normal");
+            doc.text("------ Ticket Information ------",70,40);
+            doc.text("Movie Name : " + movie, 70, 50);
+            doc.text("Ticket ID : " + ticket_id, 70, 60);
+            doc.text("Number of Seats : " + count, 70, 70);
+            doc.text("Booking Date : "+date2,70,80);
+            doc.text("Movie Date : "+date1,70,90);
+            doc.text("Movie Timing : Starts At 3:00 PM",70,100);
+            doc.text("------ Payment Information ------",70,120)
+            doc.text("Total Price : $" + total, 70, 130);
+            doc.text("Payment Method : CASH",70,140);
+            doc.text("-------- Thanks For Booking -------",70,160);
+            doc.text("----------- Visit Again -----------",70,170);
+            doc.setFont("helvetica", "bold");
+            doc.text("NOTES :",20,180);
+            doc.setFont("helvetica", "normal");
+            doc.text("Without Ticket No Entry!",20,190);
+            doc.text("Take Entry Before 20 Minutes!",20,200);
+
+
+
+            doc.save(ticket_id);
+            window.location.href = "booking.html";
+        }
+        function cancel(){
+          Swal.fire({
+                    title: 'Canceled Booking!',
+                    text: 'Your Seat Was Canceled!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    window.location.href = "booking.html";
+                });
+        }
+    </script>
+      
+</body>
+</html>

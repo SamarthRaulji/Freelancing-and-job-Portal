@@ -1,0 +1,167 @@
+body {
+    background-color: #393c5d;
+    color: whitesmoke;
+}
+
+.nav {
+    width: 98%;
+    position: fixed;
+    border: 2px solid black;
+    border-radius: 20px;
+    backdrop-filter: blur(50px) !important;
+}
+
+.log-span {
+    width: 9%;
+    font-size: 3vh;
+    font-weight: bold;
+    float: right;
+    margin-right: 4vh;
+    color: black;
+    background-color: #feca19;
+    border: 4px solid black;
+    border-radius: 20px;
+    box-shadow: 12px 5px 6px white;
+}
+
+.emptydiv {
+    height: 17vh;
+}
+
+.emptydiv2 {
+    height: 20vh;
+}
+
+.div-1 {
+    height: 100vh;
+}
+
+.div-2 {
+    height: 100vh;
+}
+
+.div-3 {
+    height: 100vh;
+}
+
+.div-4 {
+    height: 100vh;
+}
+
+.input-text {
+    height: 4vh;
+    border: 2px solid black;
+    width: 95%;
+    font-size: 1em;
+    border-radius: 20px;
+}
+
+.input-text-mini {
+    height: 4vh;
+    border: 2px solid black;
+    width: 20%;
+    font-size: 1em;
+    border-radius: 20px;
+}
+
+.btn {
+    font-weight: bold;
+    color: black;
+    height: 5vh;
+    border: 4px solid navy;
+    width: 60%;
+    font-size: 1em;
+    background-color: #feca19;
+    border-radius: 20px;
+}
+
+.input-date {
+    font-size: 1em;
+    width: 60%;
+    border: none;
+}
+
+.dob {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.input-addr {
+    height: 6vh;
+    border: 2px solid black;
+    width: 95%;
+    font-size: 2rcap;
+    border-radius: 20px;
+}
+
+.tit {
+    color: cyan;
+    font-size: 1em;
+}
+
+.fileupload {
+    border: 2px solid black;
+    width: 100%;
+    font-size: 2em;
+    border-radius: 20px;
+}
+
+.fileupload {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.input-file {
+    display: hidden;
+}
+
+.mini-input {
+    height: 4vh;
+    border: 2px solid black;
+    font-size: 1em;
+    border-radius: 20px;
+    width: 32%;
+}
+
+.yellow-text {
+    color: #feca19;
+}
+
+.content {
+    border: solid 8px black;
+    border-radius: 25px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, orange, transparent 20%, orangered);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: orange;
+}
+
+.container1 {
+    width: 100%;
+    height: 100%;
+    /* Add your background pattern here */
+    background-image: repeating-radial-gradient( #0c0a0a 80%, #2f312f 90%, #3f4549 90%);
+    background-size: 65px 65px;
+}
+
+.search-input {
+    width: 70%;
+    font-size: 1rem;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
+.sb {
+    background-color: #393c5d;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    font-size: 1rem;
+}

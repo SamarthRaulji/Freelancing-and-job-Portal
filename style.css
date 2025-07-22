@@ -1,0 +1,437 @@
+:root {
+    --navy-dark: #000080;
+    --navy-medium: #1a237e;
+    --navy-light: #303f9f;
+    --accent-blue: #4267B2;
+    --light-blue: #e3f2fd;
+    --white: #FFFFFF;
+    --gray-light: #f5f7fa;
+    --text-dark: #1a237e;
+    --text-light: #5c6bc0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(rgba(0, 0, 32, 0.8), rgba(0, 0, 32, 0.9)),
+                url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1920');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+.div-1, .div-2 {
+    background-color: rgba(255, 255, 255, 0.97);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 64, 0.2);
+    margin: 20px auto;
+    padding: 25px 35px;
+    backdrop-filter: blur(10px);
+    max-width: 600px;
+    border: 1px solid var(--light-blue);
+}
+
+.frm-container {
+    max-width: 550px;
+    margin: auto;
+}
+
+h1 {
+    color: var(--navy-dark);
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 128, 0.1);
+    font-size: 1.8em;
+}
+
+.tit {
+    color: var(--text-dark);
+    font-size: 1em;
+}
+
+/* Email/Username textbox */
+input[name="flid"] {
+    background-color: var(--gray-light);
+    border: 2px solid var(--navy-light);
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin: 8px 0;
+    font-size: 14px;
+    color: var(--text-dark);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 128, 0.1);
+}
+
+input[name="flid"]:focus {
+    border-color: var(--navy-dark);
+    box-shadow: 0 0 10px rgba(0, 0, 128, 0.2);
+    background-color: var(--white);
+    transform: translateY(-1px);
+}
+
+/* Password textbox */
+input[name="flpwd"] {
+    background-color: var(--gray-light);
+    border: 2px solid var(--navy-light);
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin: 8px 0;
+    font-size: 14px;
+    color: var(--text-dark);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 128, 0.1);
+}
+
+input[name="flpwd"]:focus {
+    border-color: var(--navy-dark);
+    box-shadow: 0 0 10px rgba(0, 0, 128, 0.2);
+    background-color: var(--white);
+    transform: translateY(-1px);
+}
+
+/* Generic input text style */
+.input-text {
+    background-color: var(--gray-light);
+    border: 2px solid var(--navy-light);
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin: 8px 0;
+    font-size: 14px;
+    color: var(--text-dark);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 128, 0.1);
+}
+
+/* Textarea - reduced size */
+textarea {
+    background-color: var(--gray-light);
+    border: 2px solid var(--navy-light);
+    padding: 10px 12px;
+    border-radius: 8px;
+    min-height: 60px;
+    max-height: 120px;
+    resize: vertical;
+    line-height: 1.4;
+    width: 100%;
+    margin: 8px 0;
+    font-size: 14px;
+    color: var(--text-dark);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 128, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Select box styling */
+select {
+    background-color: var(--gray-light);
+    border: 2px solid var(--navy-light);
+    padding: 12px 35px 12px 15px;
+    border-radius: 8px;
+    width: 100%;
+    margin: 8px 0;
+    font-size: 14px;
+    color: var(--text-dark);
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23000080' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    transition: all 0.3s ease;
+}
+
+/* Focus states for all inputs */
+.input-text:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--navy-dark);
+    box-shadow: 0 0 10px rgba(0, 0, 128, 0.2);
+    background-color: var(--white);
+    transform: translateY(-1px);
+}
+
+/* Placeholder styling */
+::placeholder {
+    color: var(--text-light);
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* Button styling */
+.btn {
+    background: linear-gradient(145deg, var(--navy-dark), var(--navy-medium));
+    color: var(--white);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 128, 0.3);
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(145deg, var(--navy-medium), var(--navy-dark));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 128, 0.4);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+th {
+    font-weight: normal;
+    color: var(--text-dark);
+}
+
+.emptydiv {
+    height: 15px;
+}
+
+/* Disabled state */
+input:disabled,
+textarea:disabled,
+select:disabled {
+    background-color: var(--gray-light);
+    border-color: #ccd0d9;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Error state */
+.input-error {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+}
+
+.input-error:focus {
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.2);
+}
+
+/* City textbox */
+input[name="fcity"] {
+    background-color: var(--gray-light);
+    border: 2px solid var(--navy-light);
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 100%;
+    margin: 6px 0;
+    font-size: 14px;
+    color: var(--text-dark);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 128, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* State textbox */
+input[name="fstate"] {
+    background-color: var(--gray-light);
+    border: 2px solid var(--navy-light);
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 100%;
+    margin: 6px 0;
+    font-size: 14px;
+    color: var(--text-dark);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 128, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Pincode textbox */
+input[name="fpin"] {
+    background-color: var(--gray-light);
+    border: 2px solid var(--navy-light);
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 100%;
+    margin: 6px 0;
+    font-size: 14px;
+    color: var(--text-dark);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 128, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Date input */
+input[type="date"] {
+    background-color: var(--gray-light);
+    border: 2px solid var(--navy-light);
+    padding: 7px 12px;
+    border-radius: 8px;
+    width: 100%;
+    margin: 6px 0;
+    font-size: 14px;
+    color: var(--text-dark);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 128, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Focus states for signup form fields */
+input[name="fcity"]:focus,
+input[name="fstate"]:focus,
+input[name="fpin"]:focus,
+input[name="fcontact"]:focus,
+input[type="date"]:focus {
+    outline: none;
+    border-color: var(--navy-dark);
+    box-shadow: 0 0 10px rgba(0, 0, 128, 0.2);
+    background-color: var(--white);
+    transform: translateY(-1px);
+}
+
+/* Hover states for signup form fields */
+input[name="fcity"]:hover,
+input[name="fstate"]:hover,
+input[name="fpin"]:hover,
+input[name="fcontact"]:hover,
+input[type="date"]:hover {
+    border-color: var(--navy-medium);
+    background-color: var(--white);
+}
+
+/* Contact number styling */
+input[name="fno"] {
+    background-color: var(--gray-light);
+    border: 2px solid var(--navy-light);
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 100%;
+    margin: 6px 0;
+    font-size: 14px;
+    color: var(--text-dark);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 128, 0.1);
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+input[name="fno"]:focus {
+    outline: none;
+    border-color: var(--navy-dark);
+    box-shadow: 0 0 10px rgba(0, 0, 128, 0.2);
+    background-color: var(--white);
+    transform: translateY(-1px);
+}
+
+input[name="fno"]:hover {
+    border-color: var(--navy-medium);
+    background-color: var(--white);
+}
+
+/* Placeholder text for signup fields */
+input[name="fcity"]::placeholder,
+input[name="fstate"]::placeholder,
+input[name="fpin"]::placeholder,
+input[name="fno"]::placeholder {
+    color: var(--text-light);
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* Adjust input widths for better spacing in wider form */
+.input-text,
+textarea,
+select,
+input[type="date"],
+input[name="fcity"],
+input[name="fstate"],
+input[name="fpin"],
+input[name="fno"] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Adjust button width for wider form */
+.btn {
+    width: 100%;
+    max-width: none;
+    margin-top: 15px;
+}
+
+/* Enhanced Select/List Box Styling */
+select[name="fform"] {
+    background-color: var(--gray-light);
+    border: 2px solid var(--navy-light);
+    padding: 10px 35px 10px 15px;
+    border-radius: 8px;
+    width: 100%;
+    margin: 8px 0;
+    font-size: 14px;
+    color: var(--text-dark);
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23000080' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 128, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Hover state for select */
+select[name="fform"]:hover {
+    border-color: var(--navy-medium);
+    background-color: var(--white);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 128, 0.1);
+}
+
+/* Focus state for select */
+select[name="fform"]:focus {
+    outline: none;
+    border-color: var(--navy-dark);
+    background-color: var(--white);
+    box-shadow: 0 0 10px rgba(0, 0, 128, 0.2);
+    transform: translateY(-1px);
+}
+
+/* Option styling */
+select[name="fform"] option {
+    background-color: var(--white);
+    color: var(--text-dark);
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* Disabled state */
+select[name="fform"]:disabled {
+    background-color: var(--gray-light);
+    border-color: #ccd0d9;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Selected option style */
+select[name="fform"] option:checked {
+    background-color: var(--navy-light);
+    color: var(--white);
+}
+
+/* Remove default focus outline in Firefox */
+select[name="fform"]:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 var(--text-dark);
+}
+
+/* Placeholder style for select */
+select[name="fform"] option[value=""][disabled] {
+    color: var(--text-light);
+    font-style: italic;
+}
